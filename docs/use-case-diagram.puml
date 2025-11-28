@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+
+:Klant: as Customer
+:Administrator: as Admin
+
+rectangle "Stegeman Vinyl Website" {
+  (Koop product via webshop) as (BuyProduct)
+  (Lees artikelen) as (ReadArticles)
+  (Discussieer op forum) as (Forum)
+  (Voeg product toe) as (AddProduct)
+  (Verwijder product) as (RemoveProduct)
+  (Voeg forumcategorie toe) as (AddForumCategory)
+  (Plaats blogartikel) as (PostBlog)
+  (Maak back-up) as (Backup)
+  (Update website) as (UpdateWebsite)
+}
+
+Customer --> (BuyProduct)
+Customer --> (ReadArticles)
+Customer --> (Forum)
+
+Admin --> (AddProduct)
+Admin --> (RemoveProduct)
+Admin --> (AddForumCategory)
+Admin --> (PostBlog)
+Admin --> (Backup)
+Admin --> (UpdateWebsite)
+
+@enduml
