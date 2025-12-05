@@ -10,12 +10,13 @@
 /wp-admin/
 /wp-content/index.php
 /wp-content/languages
+/wp-content/ai1wm-backups
 /wp-content/plugins/index.php
-/wp-content/plugins/woocommerce
+/wp-content/plugins/woocommerce*
 /wp-content/plugins/all-in-one-wp-migration
 
 
-/wp-content/themes/index.php
+/wp-content/themes/*
 /wp-includes/
 /index.php
 /license.txt
