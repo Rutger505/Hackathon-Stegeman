@@ -1,0 +1,58 @@
+/* Group
+--------------------------------------------- */
+
+.is-style-background-blur {
+	position: relative;
+}
+
+/* Safari backdrop-filter flickering fix using browser-specific approach */
+/* Disables blur in Safari while maintaining it for other browsers */
+/* Uses semi-transparent background as fallback for Safari */
+.is-style-background-blur::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	pointer-events: none;
+	border-radius: inherit;
+	z-index: -1;
+}
+
+/* Safari-specific fix to disable backdrop-filter and use transparency fallback */
+@supports (-webkit-hyphens:none) {
+	.is-style-background-blur::before {
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
+		background-color: rgba(255, 255, 255, 0.95);
+	}
+}
+
+/* Improvements for row group */
+@media (max-width: 781px) {
+	.moiraine-row-stack {
+		flex-direction: column;
+		align-items: flex-start !important;
+	}
+
+	.moiraine-row-stack > * {
+		flex-basis: 100% !important;
+	}
+
+	.moiraine-flex-start {
+		align-items: flex-start !important;
+	}
+
+	.moiraine-justify-start {
+		justify-content: flex-start !important;
+	}
+}
+
+.moiraine-row-stack > .wp-block-buttons,
+.moiraine-no-shrink {
+	flex-shrink: 0;
+}
+
+.wp-block-group.moiraine-sticky-top {
+	top: calc(20px + var(--wp-admin--admin-bar--position-offset, 0px))
+}
